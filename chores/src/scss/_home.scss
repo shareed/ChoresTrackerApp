@@ -1,0 +1,24 @@
+.app {
+    height: 100vh;
+    background-color: #D7CDCC;
+    
+.home {
+    .header {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(130, 130, 240);
+        .title {
+            font-size: 2rem;
+        }
+    }
+    .btns {
+        display: flex;
+        flex-direction: column;
+        margin: 300px 40px 0 40px;
+        .btn {
+            background-color: #4C4B63;
+            margin-top: 20px;
+        }
+    }
+}
+}

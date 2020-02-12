@@ -1,0 +1,17 @@
+@include media-med {
+    .app {
+        padding-top: 100px;
+        .home {
+            height: 60vh;
+            margin: 0px auto;
+            width: 80%;
+            background-color: rgb(130, 130, 240);
+            padding-top: 60px;
+            box-shadow: 5px 10px #888888;
+            .btns {
+                margin: 100px 40px 0 40px;
+            }
+        }
+        
+    }
+}
