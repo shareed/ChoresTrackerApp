@@ -1,16 +1,4 @@
-.app {
-    height: 100vh;
-    background-color: #D7CDCC;
-    
 .home {
-    .header {
-        display: flex;
-        justify-content: center;
-        background-color: rgb(130, 130, 240);
-        .title {
-            font-size: 2rem;
-        }
-    }
     .btns {
         display: flex;
         flex-direction: column;
@@ -20,5 +8,4 @@
             margin-top: 20px;
         }
     }
-}
 }

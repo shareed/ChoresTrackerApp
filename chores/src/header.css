@@ -1,0 +1,14 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #8282f0;
+}
+
+.header .title {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=header.css.map */

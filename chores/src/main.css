@@ -55,7 +55,7 @@ button {
   background-color: #D7CDCC;
 }
 
-.app .home .header {
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,11 +65,11 @@ button {
   background-color: #8282f0;
 }
 
-.app .home .header .title {
+.header .title {
   font-size: 2rem;
 }
 
-.app .home .btns {
+.home .btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,33 +80,63 @@ button {
   margin: 300px 40px 0 40px;
 }
 
-.app .home .btns .btn {
+.home .btns .btn {
   background-color: #4C4B63;
   margin-top: 20px;
 }
 
+.signin {
+  margin: 20px auto;
+  width: 80%;
+  background-color: #4C4B63;
+  font-weight: bolder;
+  padding: 20px;
+}
+
+.signin a {
+  color: #8282f0;
+}
+
+.signin p {
+  font-size: .7rem;
+}
+
+.signup {
+  margin: 20px auto;
+  width: 80%;
+  background-color: #4C4B63;
+  font-weight: bolder;
+  padding: 20px;
+}
+
+.signup a {
+  color: #8282f0;
+}
+
+.signup p {
+  font-size: .7rem;
+}
+
 @media screen and (min-width: 500px) {
-  .app {
-    padding-top: 100px;
-  }
   .app .home {
     height: 60vh;
-    margin: 0px auto;
+    margin: 20px auto;
     width: 80%;
-    background-color: #8282f0;
+    background-color: #4C4B63;
     padding-top: 60px;
+    padding-bottom: 60px;
     -webkit-box-shadow: 5px 10px #888888;
             box-shadow: 5px 10px #888888;
   }
   .app .home .btns {
     margin: 100px 40px 0 40px;
   }
+  .app .home .btns .btn {
+    background-color: #8282f0;
+  }
 }
 
 @media screen and (min-width: 664px) {
-  .app {
-    padding-top: 100px;
-  }
   .app .home {
     height: 80vh;
   }
