@@ -3,4 +3,6 @@
 - express
 - nodemon
 - dotenv
+- morgan
+- helmet
 

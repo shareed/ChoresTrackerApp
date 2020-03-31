@@ -20,11 +20,7 @@ const users = [
 
 
 router.get('/', (req, res) => {
-    const sortField = req.query.sortby || 'id'; //http://localhost:500/tracker?sortby=name
-    const response = users.sort(
-      (a, b) => (a[sortField] < b[sortField] ? -1 : 1)
-    );
-  
+    const response = users
     res.status(200).json(response);
   });
 
