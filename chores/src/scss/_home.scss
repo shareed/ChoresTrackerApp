@@ -1,11 +1,28 @@
 .home {
+    .app_info{ 
+        display: flex;
+        flex-direction: column;
+        
+    p {
+        font-size: .8rem;
+        width : 100%;
+        text-align: center;
+    }
+    .fa {
+        margin-right:10px;
+    }
+    .top {
+        display: none;
+    }
+}
     .btns {
         display: flex;
         flex-direction: column;
-        margin: 300px 40px 0 40px;
+        margin: 40px 40px 0 40px;
         .btn {
             background-color: #4C4B63;
             margin-top: 20px;
         }
     }
+    
 }

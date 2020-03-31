@@ -21,7 +21,7 @@ export default function SignIn(props) {
                 <Label for="examplePassword" className="mr-sm-2">Password</Label>
                 <Input type="password" name="password" id="examplePassword" placeholder="don't tell!" />
             </FormGroup>
-            <Button>Submit</Button>
+            <Button onClick={() => props.history.push('/userhome')}>Submit</Button>
             <p>Dont Have an account? <Link to = '/signup'>
                 SIGN UP
             </Link></p>

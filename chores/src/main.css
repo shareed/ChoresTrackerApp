@@ -69,6 +69,38 @@ button {
   font-size: 2rem;
 }
 
+.bgimg {
+  margin-top: 60px;
+}
+
+.bgimg img {
+  max-width: 100%;
+}
+
+.home .app_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.home .app_info p {
+  font-size: .8rem;
+  width: 100%;
+  text-align: center;
+}
+
+.home .app_info .fa {
+  margin-right: 10px;
+}
+
+.home .app_info .top {
+  display: none;
+}
+
 .home .btns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,7 +109,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 300px 40px 0 40px;
+  margin: 40px 40px 0 40px;
 }
 
 .home .btns .btn {
@@ -117,19 +149,76 @@ button {
   font-size: .7rem;
 }
 
+.strike-through {
+  text-decoration: line-through;
+  color: red;
+}
+
+@media screen and (min-width: 400px) {
+  .app_info p {
+    font-size: 5rem;
+  }
+}
+
 @media screen and (min-width: 500px) {
+  .app {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .app .home {
-    height: 60vh;
-    margin: 20px auto;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 80%;
     background-color: #4C4B63;
-    padding-top: 60px;
     padding-bottom: 60px;
     -webkit-box-shadow: 5px 10px #888888;
             box-shadow: 5px 10px #888888;
   }
+  .app .home .app_info {
+    margin-top: 30px;
+    color: #D7CDCC;
+  }
+  .app .home .app_info .icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .app .home .app_info .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-top: 10px;
+  }
+  .app .home .app_info .text p {
+    width: 30%;
+  }
+  .app .home .app_info .side {
+    display: none;
+  }
+  .app .home .app_info .top {
+    display: block;
+  }
   .app .home .btns {
-    margin: 100px 40px 0 40px;
+    margin: 40px 40px 0 40px;
   }
   .app .home .btns .btn {
     background-color: #8282f0;
@@ -137,9 +226,6 @@ button {
 }
 
 @media screen and (min-width: 664px) {
-  .app .home {
-    height: 80vh;
-  }
   .app .home .btns {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
