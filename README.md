@@ -6,5 +6,7 @@
 - morgan
 - helmet
 - cors
+- knex
+- sqlite3
 
 
