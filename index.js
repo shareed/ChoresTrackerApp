@@ -2,7 +2,7 @@ require('dotenv').config()
 const server = require('./api/server.js'); 
 
 server.get('/', (req, res) => {
-    res.send('HELLO, YOU HAVE ENTERED MY SERVER')
+    res.send('HELLO, YOU HAVE ENTERED MY CHORES TRACKER SERVER')
 })
 
 const port =process.env.PORT;
