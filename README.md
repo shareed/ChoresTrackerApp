@@ -1,1 +1,5 @@
-# ChoresTrackerApp
+# ChoresTrackerApp-Server
+- node
+- express
+- nodemon
+- 
