@@ -1,11 +1,14 @@
 const express =require('express');
 const morgan = require('morgan');
 const helmet =require('helmet');
+const cors = require('cors');
+
 const userRoutes = require('../users/userRoutes')
 
 const server =express();
 server.use(helmet());
 server.use(morgan('dev'));
+server.use(cors());
 server.use(express.json())
 
 server.get('/', (req, res) => {

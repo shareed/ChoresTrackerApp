@@ -5,4 +5,6 @@
 - dotenv
 - morgan
 - helmet
+- cors
+
 
