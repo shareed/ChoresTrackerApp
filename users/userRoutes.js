@@ -17,8 +17,9 @@ const users = [
 
   let nextId = 3;
 
+
+
 router.get('/', (req, res) => {
-    console.log(req.query);
     const sortField = req.query.sortby || 'id'; //http://localhost:500/tracker?sortby=name
     const response = users.sort(
       (a, b) => (a[sortField] < b[sortField] ? -1 : 1)
@@ -30,10 +31,9 @@ router.get('/', (req, res) => {
 
   router.post('/', (req, res) => {
     const user = req.body;
+
     user.id = nextId++;
-  
     users.push(user);
-    console.log(req.body);
   
     res.status(201).json(users);
   });
@@ -57,7 +57,7 @@ router.delete('/:id', (req, res) => {
     const id = req.params.id;
     console.log(req.params)
     res.status(200).json({
-      url: `/tracker/${id}`,
+      url: `/users/${id}`,
       operation: `DELETE for user with id ${id}`,
     });
   });
