@@ -9,6 +9,7 @@ module.exports = {
   add,
   remove,
   update
+
 };
 
 function find(query) {
@@ -29,6 +30,8 @@ function findBy(filter) {
     .where(filter)
     
 }
+
+
 
 
 function findById(id) {
@@ -54,3 +57,4 @@ function update(id, changes) {
     .where({ id })
     .update(changes, '*');
 }
+

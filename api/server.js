@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const helmet =require('helmet');
 const cors = require('cors');
 
-
+const authRoutes = require("../auth/authRouter.js");
 const userRoutes = require('../users/userRouter')
 
 const server =express();
@@ -16,22 +16,6 @@ server.get('/', (req, res) => {
   res.send('HELLO, YOU HAVE ENTERED MY CHORES TRACKER SERVER')
 })
 
-
-
-
-server.post('/register', (req, res) => {
-  let user = req.body;
-
-  const hash = bcrypt.hashSync(user.password, 12)
-  user.password = hash
-  Users.add(user)
-    .then(saved => {
-      res.status(201).json(saved);
-    })
-    .catch(error => {
-      res.status(500).json(error);
-    });
-});
 //Error handling middleware
 server.use((err, req, res, next) => {
   console.log(err)
@@ -40,6 +24,7 @@ server.use((err, req, res, next) => {
   .json({message: 'There was an err', error: err})
 })
 
+server.use("/auth", authRoutes);
 server.use('/users', userRoutes)
 
 server.use(function(req, res) {
