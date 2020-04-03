@@ -3,17 +3,27 @@ import { Link } from 'react-router-dom';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default function SignIn(props) {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [phone, setPhone] = useState('');
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        password: '',
+        phone: ''
+    });
+    
 
 
     const onSubmitHandler = e => e.preventdefault();
-    const onUsernameChange = e => setUsername(e.target.value);
-    const onEmailChange = e => setEmail(e.target.value);
-    const onPasswordChange = e => setPassword(e.target.value);
-    const onPhoneChange = e => setPhone(e.target.value);
+    const onInputChange = e => {
+        //set a new state, an object
+        setFormData({
+            ...formData,
+
+            //used to get the dynamic name property, and the value of that property 
+            [e.target.name]: e.target.value,
+        }); 
+    //  debugger
+    };
+    
     
 
 
@@ -21,8 +31,8 @@ export default function SignIn(props) {
             <div className = 'signup'>
                 <Form onSubmit = {onSubmitHandler}>
                 <FormGroup>
-                    <Label for="username">Username {username || ''}</Label>
-                    <Input onChange = {onUsernameChange}
+                    <Label for="username">Username </Label>
+                    <Input onChange = {onInputChange}
                     type="username"
                     name="username"
                     id="username"
@@ -30,8 +40,8 @@ export default function SignIn(props) {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="email">Email {email || ''}</Label>
-                    <Input onChange = {onEmailChange}
+                    <Label for="email">Email </Label>
+                    <Input onChange = {onInputChange}
                     type="email"
                     name="email"
                     id="email"
@@ -39,8 +49,8 @@ export default function SignIn(props) {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="password">Password {password || ''}</Label>
-                    <Input onChange = {onPasswordChange}
+                    <Label for="password">Password </Label>
+                    <Input onChange = {onInputChange}
                     type="password"
                     name="password"
                     id="password"
@@ -49,8 +59,8 @@ export default function SignIn(props) {
                 </FormGroup>
                 
                 <FormGroup>
-                    <Label for="phone">Phone Number {phone || ''}</Label>
-                    <Input onChange = {onPhoneChange}
+                    <Label for="phone">Phone Number </Label>
+                    <Input onChange = {onInputChange}
                     type="phone"
                     name="phone"
                     id="phone"
