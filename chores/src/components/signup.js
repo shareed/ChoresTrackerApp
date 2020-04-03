@@ -1,61 +1,66 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default function SignIn(props) {
-
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [phone, setPhone] = useState('');
 
          return (
             <div className = 'signup'>
-                <Link to = '/'>
-                    HOME
-                </Link>
-                <Link to = '/signin'>
-                    SIGN IN
-                </Link>
                 <Form>
                 <FormGroup>
-                    <Label for="exampleEmail">Plain Text (Static)</Label>
-                    <Input plaintext value="Some plain text/ static value" />
+                    <Label for="username">Username {username || ''}</Label>
+                    <Input onChange = {e => {
+                        setUsername(e.target.value)
+                    }}
+                    type="username"
+                    name="username"
+                    id="username"
+                    placeholder="create a username"
+                    />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="exampleEmail">Email</Label>
-                    <Input
+                    <Label for="email">Email {email || ''}</Label>
+                    <Input onChange = { e => {
+                        setEmail(e.target.value)
+                    }}
                     type="email"
                     name="email"
-                    id="exampleEmail"
-                    placeholder="with a placeholder"
+                    id="email"
+                    placeholder="add your email"
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="examplePassword">Password</Label>
-                    <Input
+                    <Label for="password">Password {password || ''}</Label>
+                    <Input onChange = {e => {
+                        setPassword(e.target.value)
+                    }}
                     type="password"
                     name="password"
-                    id="examplePassword"
-                    placeholder="password placeholder"
+                    id="password"
+                    placeholder="create a password"
                     />
                 </FormGroup>
+                
                 <FormGroup>
-                    <Label for="exampleUrl">Url</Label>
-                    <Input
-                    type="url"
-                    name="url"
-                    id="exampleUrl"
-                    placeholder="url placeholder"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="exampleNumber">Number</Label>
-                    <Input
-                    type="number"
-                    name="number"
-                    id="exampleNumber"
-                    placeholder="number placeholder"
+                    <Label for="phone">Phone Number {phone || ''}</Label>
+                    <Input onChange = {e => {
+                        setPhone(e.target.value)
+                    }}
+                    type="phone"
+                    name="phone"
+                    id="phone"
+                    placeholder="enter your phone number"
                     />
                 </FormGroup>
                 
                 </Form>
+                <Link to = '/signin'>
+                    SIGN IN
+                </Link>
     </div>
   );
 }

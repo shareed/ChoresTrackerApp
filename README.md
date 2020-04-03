@@ -12,3 +12,9 @@
 - express-session
 
 
+Users
+ - username
+ - email
+ - phone
+ - password
+ 
