@@ -8,5 +8,6 @@
 - cors
 - knex
 - sqlite3
+- bcryptjs
 
 
