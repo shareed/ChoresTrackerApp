@@ -33,5 +33,20 @@ router.post('/register', (req, res) => {
         res.status(500).json(error);
       });
   });
+
+
+  router.get('/logout', (req, res) => {
+    if(req.session) {
+      req.session.destroy(err => {
+        if(err) {
+          res.json({message: "There was an error"})
+        }else {
+          res.status(200).json({message: "You are logged out"})
+        }
+      })
+    }else {
+      res.status(200).json({meaasge: 'You are not logged in'})
+    }
+  })
   
 module.exports = router
