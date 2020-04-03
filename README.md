@@ -9,5 +9,6 @@
 - knex
 - sqlite3
 - bcryptjs
+- express-session
 
 

@@ -1,9 +1,11 @@
 const express = require('express');
-const Users = require('./userModel.js')
+const Users = require('./userModel.js');
+const protected = require('../auth/restricted-middleware.js');
+
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', protected, (req, res) => {
   Users.find(req.query)
   .then(users => {
     res.json(users); 
