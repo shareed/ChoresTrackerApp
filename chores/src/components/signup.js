@@ -8,14 +8,21 @@ export default function SignIn(props) {
     const [password, setPassword] = useState('');
     const [phone, setPhone] = useState('');
 
+
+    const onSubmitHandler = e => e.preventdefault();
+    const onUsernameChange = e => setUsername(e.target.value);
+    const onEmailChange = e => setEmail(e.target.value);
+    const onPasswordChange = e => setPassword(e.target.value);
+    const onPhoneChange = e => setPhone(e.target.value);
+    
+
+
          return (
             <div className = 'signup'>
-                <Form>
+                <Form onSubmit = {onSubmitHandler}>
                 <FormGroup>
                     <Label for="username">Username {username || ''}</Label>
-                    <Input onChange = {e => {
-                        setUsername(e.target.value)
-                    }}
+                    <Input onChange = {onUsernameChange}
                     type="username"
                     name="username"
                     id="username"
@@ -24,9 +31,7 @@ export default function SignIn(props) {
                 </FormGroup>
                 <FormGroup>
                     <Label for="email">Email {email || ''}</Label>
-                    <Input onChange = { e => {
-                        setEmail(e.target.value)
-                    }}
+                    <Input onChange = {onEmailChange}
                     type="email"
                     name="email"
                     id="email"
@@ -35,9 +40,7 @@ export default function SignIn(props) {
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">Password {password || ''}</Label>
-                    <Input onChange = {e => {
-                        setPassword(e.target.value)
-                    }}
+                    <Input onChange = {onPasswordChange}
                     type="password"
                     name="password"
                     id="password"
@@ -47,9 +50,7 @@ export default function SignIn(props) {
                 
                 <FormGroup>
                     <Label for="phone">Phone Number {phone || ''}</Label>
-                    <Input onChange = {e => {
-                        setPhone(e.target.value)
-                    }}
+                    <Input onChange = {onPhoneChange}
                     type="phone"
                     name="phone"
                     id="phone"
@@ -58,7 +59,8 @@ export default function SignIn(props) {
                 </FormGroup>
                 
                 </Form>
-                <Link to = '/signin'>
+                <Link >
+                {/* <Link to = '/signin'> */}
                     SIGN IN
                 </Link>
     </div>
