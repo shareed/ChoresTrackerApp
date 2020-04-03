@@ -4,13 +4,11 @@ const db = knex(config.development);
 
 module.exports = {
   find,
+  findBy,
   findById,
   add,
   remove,
   update
-//   finduserMessages,
-//   findMessageById,
-//   addMessage,
 };
 
 function find(query) {
@@ -24,6 +22,14 @@ function find(query) {
 
   return rows;
 }
+
+
+function findBy(filter) {
+  return db('users')
+    .where(filter)
+    
+}
+
 
 function findById(id) {
   return db('users')
@@ -48,4 +54,3 @@ function update(id, changes) {
     .where({ id })
     .update(changes, '*');
 }
-
