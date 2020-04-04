@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
 
-export default function SignIn(props) {
+export default function SignUp(props) {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -12,7 +12,14 @@ export default function SignIn(props) {
     
 
 
-    const onSubmitHandler = e => e.preventdefault();
+    const onSubmitHandler = e => {
+        
+        e.preventDefault();
+        alert(`sending: UserName: ${formData.username}, Email: ${formData.email}, Password: ${formData.phone}`)
+        // console.log(user.name);
+        // console.log(user.password);
+
+    } 
     const onInputChange = e => {
         //set a new state, an object
         setFormData({
@@ -31,7 +38,7 @@ export default function SignIn(props) {
             <div className = 'signup'>
                 <Form onSubmit = {onSubmitHandler}>
                 <FormGroup>
-                    <Label for="username">Username </Label>
+                    <Label for="username">Username {formData.username || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="username"
                     name="username"
@@ -40,7 +47,7 @@ export default function SignIn(props) {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="email">Email </Label>
+                    <Label for="email">Email {formData.email || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="email"
                     name="email"
@@ -49,7 +56,7 @@ export default function SignIn(props) {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="password">Password </Label>
+                    <Label for="password">Password {formData.password || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="password"
                     name="password"
@@ -59,7 +66,7 @@ export default function SignIn(props) {
                 </FormGroup>
                 
                 <FormGroup>
-                    <Label for="phone">Phone Number </Label>
+                    <Label for="phone">Phone Number {formData.phone || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="phone"
                     name="phone"
@@ -67,7 +74,7 @@ export default function SignIn(props) {
                     placeholder="enter your phone number"
                     />
                 </FormGroup>
-                
+                <Button>Submit</Button>
                 </Form>
                 <Link >
                 {/* <Link to = '/signin'> */}

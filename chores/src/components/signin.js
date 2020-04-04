@@ -1,8 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function SignIn(props) {
+    const [user, setUser] = useState({ email: "", password: "" });
+
+    const onInputChange = e => {
+        //set a new state, an object
+        setUser({
+            ...user,
+            //used to get the dynamic name property, and the value of that property 
+            [e.target.name]: e.target.value
+        }); 
+    //  debugger
+    };
+    const handleSubmit = event => {
+        event.preventDefault();
+        axios.post('http://localhost:500/auth/login', user)
+             .then(res => console.log(res))
+             .catch(err => console.log(err))
+        //resets the input fields to empty strings on submit, by the value propery on the inputs
+        setUser({ email: '', password: '' })
+        console.log(user.email);
+        console.log(user.password);
+    };
+
 
 
      return (
@@ -12,16 +35,27 @@ export default function SignIn(props) {
                 HOME
             </Link>
             
-            <Form>
+            <Form onSubmit={handleSubmit}>
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Label for="exampleEmail" className="mr-sm-2">Email</Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="something@idk.cool" />
+                <Label for="email" className="mr-sm-2">Email</Label>
+                <Input onChange={onInputChange}
+                type="email" 
+                name="email" 
+                id="email" 
+                placeholder="enter your email"
+                value={user.email} />
             </FormGroup>
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Label for="examplePassword" className="mr-sm-2">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="don't tell!" />
+                <Label for="password" className="mr-sm-2">Password</Label>
+                <Input onChange={onInputChange}
+                type="password" 
+                name="password" 
+                id="password" 
+                placeholder="enter your password"
+                value={user.password} />
             </FormGroup>
-            <Button onClick={() => props.history.push('/userhome')}>Submit</Button>
+            <Button>Submit</Button>
+            {/* <Button onClick={() => props.history.push('/userhome')}>Submit</Button> */}
             <p>Dont Have an account? <Link to = '/signup'>
                 SIGN UP
             </Link></p>
