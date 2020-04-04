@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import axios from 'axios';
+import {axioswithAuth} from '../auth/axiosAuth';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -20,6 +21,7 @@ export default function SignIn(props) {
         axios.post('http://localhost:500/auth/login', user)
              .then(res => {
                  console.log(res)
+                 localStorage.setItem("token", res.data.payload);
                  props.history.push('/userhome')
             })
              .catch(err => console.log(err))

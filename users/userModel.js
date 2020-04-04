@@ -4,6 +4,8 @@ const db = knex(config.development);
 
 module.exports = {
   find,
+  getUserWorkers,
+  findWorkers,
   findBy,
   findById,
   add,
@@ -13,6 +15,18 @@ module.exports = {
 };
 
 function find(query) {
+  const { page = 1, limit = 50, sortby = 'id', sortdir = 'asc' } = query;
+  const offset = limit * (page - 1);
+
+  let rows = db('users')
+    .orderBy(sortby, sortdir)
+    .limit(limit)
+    .offset(offset);
+
+  return rows;
+}
+
+function findWorkers(query) {
   const { page = 1, limit = 50, sortby = 'id', sortdir = 'asc' } = query;
   const offset = limit * (page - 1);
 
@@ -58,3 +72,11 @@ function update(id, changes) {
     .update(changes, '*');
 }
 
+
+function getUserWorkers(id){
+  return db('users')
+  .join('user_workers', 'users.id', '=', 'user_workers.userid')
+  .join('workers', 'workers.id', '=', 'user_workers.workersid')
+  .where({ 'users.id': id})
+  .select('users.username', 'workers.workername');
+}

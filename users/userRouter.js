@@ -15,6 +15,16 @@ router.get('/', protected, (req, res) => {
   });
 });
 
+router.get('/', (req, res) => {
+  Users.findWorkers(req.query)
+  .then(workers => {
+    res.json(users); 
+  })
+  .catch (err => {
+    res.status(500).json({ message: 'Failed to retrieve users' });
+  });
+});
+
 
 router.get('/:id', (req, res) => {
   const { id } = req.params;
@@ -78,4 +88,41 @@ router.delete('/:id', (req, res) => {
     });
   });
 });
+
+
+
+router.get('/:id/workers',  validateUserId, (req, res) => {
+
+  const { id } = req.params;
+
+  Users.getUserWorkers(id)
+  .then(workers => {
+      res.status(200).json(workers);
+  })
+  .catch(error => {
+      console.log("workers error", error);
+      res.status(500).json({ error: 'There was an error retrieving the workers from the database.'});
+  })
+
+
+})
+
+
+//custom/local middleware
+function validateUserId(req, res, next){
+
+  const {id} = req.params;
+
+  Users.findById(id)
+  .then(user => {
+      if(user){
+          next();
+      }
+      else {
+          res.status(404).json( {message: 'A recipe with that id does not exist.'} );
+      }
+  })
+  
+
+};
   module.exports = router;
