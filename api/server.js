@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const authRoutes = require("../auth/authRouter.js");
 const userRoutes = require('../users/userRouter')
-
+const workerRoutes = require('../workers/workerRouter')
 const server =express();
 
 
@@ -43,6 +43,7 @@ server.use((err, req, res, next) => {
 
 server.use("/auth", authRoutes);
 server.use('/users', userRoutes)
+server.use('/workers', workerRoutes)
 
 server.use(function(req, res) {
   res.status(404).send(`WRONG URL`);

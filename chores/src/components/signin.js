@@ -18,7 +18,10 @@ export default function SignIn(props) {
     const handleSubmit = event => {
         event.preventDefault();
         axios.post('http://localhost:500/auth/login', user)
-             .then(res => console.log(res))
+             .then(res => {
+                 console.log(res)
+                 props.history.push('/userhome')
+            })
              .catch(err => console.log(err))
         //resets the input fields to empty strings on submit, by the value propery on the inputs
         setUser({ email: '', password: '' })
@@ -55,7 +58,6 @@ export default function SignIn(props) {
                 value={user.password} />
             </FormGroup>
             <Button>Submit</Button>
-            {/* <Button onClick={() => props.history.push('/userhome')}>Submit</Button> */}
             <p>Dont Have an account? <Link to = '/signup'>
                 SIGN UP
             </Link></p>
