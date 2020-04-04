@@ -9,26 +9,28 @@ import WorkersList from './userWorkers/workersList';
 function UserHome(props) {
     const [workers, setWorkers] = useState([]);
 
-    useEffect( () => {
+    const displayWorkers = (id) => {
 
-        axiosWithAuth().get("http://localhost:500/workers")
+        axiosWithAuth().get(`http://localhost:500/users/${id}/workers`)
         .then(res => {
             setWorkers(res.data);
             console.log("get workers", res.data)
         }) 
         .catch (err => {
             console.log("get workers error", err.response);
-        })
-    }, []);         
+        })         
+    }
 
+    
      return (
         <div>
             
             <h1>User Home</h1>
-               <WorkersList workers = {workers} />
+               <WorkersList displayWorkers = { displayWorkers } workers = { workers } />
             <Button onClick={() => props.history.push('/addperson')} className = "btn" size="lg">
                 Add Person
             </Button>
+            <button onClick = {() => {displayWorkers(1)}}>This</button>
         </div>
      )
   }

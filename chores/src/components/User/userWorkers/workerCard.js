@@ -2,6 +2,7 @@ import React from 'react';
 
 function WorkerCard ({worker}) {
 
+    
     return (
         <div>
             {worker.workername}
