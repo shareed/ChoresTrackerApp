@@ -10,7 +10,7 @@
 - sqlite3
 - bcryptjs
 - express-session
-
+- To run server `npm run server`
 
 Users
  - username
@@ -18,3 +18,7 @@ Users
  - phone
  - password
  
+
+
+##Chores FrontEnd
+- To start app `npm start`
