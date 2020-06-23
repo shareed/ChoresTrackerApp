@@ -8,6 +8,7 @@ import Home from './components/home';
 import Footer from './components/footer'
 import WhichSignUp from './components/whichSignUp';
 import SignUp from './components/signup';
+import SignIn from './components/signin';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route exact path = '/' component = {Home} />
       <Route path = '/whichsignup' component = {WhichSignUp} />
       <Route path = '/signup' component = {SignUp} />
+      <Route path = '/signin' component = {SignIn} />
       <Footer />
     </div>
   );
