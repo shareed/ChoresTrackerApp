@@ -10,8 +10,8 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-#DUTY APP
+#DUTY APP - Basic App Set Up
 ###Home - Complete
 ###Which Sign Up - Complete
-###Sign Up - Working
-###Sign In
+###Sign Up - Complete
+###Sign In - Working
