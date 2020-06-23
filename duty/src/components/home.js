@@ -17,17 +17,17 @@ export default function Home(props) {
                     </div>
 
                     <div className = 'text-div'>
-                        <p><i class="fa fa-bell side"></i></p>
+                        <p><i className="fa fa-bell side"></i></p>
                         <p className = 'text'>Set Up And Send Reminders</p>
                     </div>
 
                     <div className = 'text-div'>
-                        <p><i class="fa fa-check-square-o side"></i></p>
+                        <p><i className="fa fa-check-square-o side"></i></p>
                         <p className = 'text'>Set Up And Send Notification</p>
                     </div>
 
                     <div className = 'text-div'>
-                        <p><i class="fa fa-money side"></i></p>
+                        <p><i className="fa fa-money side"></i></p>
                         <p className = 'text'>Reward with safe secure transfers. </p>
                     </div>
 

@@ -1,0 +1,62 @@
+.signin {
+    height: 50vh;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form {
+    margin-top: 5rem;
+}
+
+.set {
+   display: flex;
+   flex-direction: column;
+}
+
+.set input {
+   margin-bottom: 3rem;
+}
+
+.button {
+   display: flex;
+   justify-content: center;
+}
+
+Button {
+   
+   font-size: 2rem;
+   margin-bottom: 2rem;
+}
+
+@media(min-width: 500px) {
+  .signin {
+      margin-top: 9rem;
+      font-size: 2.5rem;
+  }
+   
+   Button {
+       font-size: 3rem;
+       margin-bottom: 2rem;
+   }
+   
+}
+
+@media(min-width: 800px) {
+   
+
+}
+
+@media(min-width: 1000px) {
+    .signin {
+        font-size: 4rem;
+    }
+   .set input {
+       font-size: 3rem;
+   }
+
+}
+

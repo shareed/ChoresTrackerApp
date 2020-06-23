@@ -4,6 +4,8 @@ import {axioswithAuth} from '../auth/axiosAuth';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
+import '../css/signin.css';
+
 export default function SignIn(props) {
 
     const [user, setUser] = useState({ email: "", password: "" });
@@ -37,8 +39,8 @@ export default function SignIn(props) {
                     HOME
                 </Link>
                 
-                <Form onSubmit={handleSubmit}>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                <Form className = "form" onSubmit={handleSubmit}>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0 set">
                         <Label for="email" className="mr-sm-2">Email</Label>
                         <Input onChange={onInputChange}
                         type="email" 
@@ -47,7 +49,7 @@ export default function SignIn(props) {
                         placeholder="enter your email"
                         value={user.email} />
                     </FormGroup>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0 set">
                         <Label for="password" className="mr-sm-2">Password</Label>
                         <Input onChange={onInputChange}
                         type="password" 
