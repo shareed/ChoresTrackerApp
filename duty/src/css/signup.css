@@ -1,0 +1,55 @@
+.signup {
+     height: 50vh;
+     font-size: 2rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+
+}
+
+.set {
+    display: flex;
+    flex-direction: column;
+}
+
+.set input {
+    margin-bottom: 3rem;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+Button {
+    
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media(min-width: 500px) {
+   .signup {
+       margin-top: 9rem;
+       font-size: 4rem;
+   }
+    
+    Button {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+}
+
+@media(min-width: 800px) {
+    
+
+}
+
+@media(min-width: 1000px) {
+    .set input {
+        font-size: 3rem;
+    }
+
+}
+

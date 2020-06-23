@@ -2,7 +2,10 @@ import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
 
+import '../css/signup.css';
+
 export default function SignUp(props) {
+
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -10,14 +13,13 @@ export default function SignUp(props) {
         phone: ''
     });
     
-
-
     const onSubmitHandler = e => {
         
         e.preventDefault();
         alert(`sending: UserName: ${formData.username}, Email: ${formData.email}, Password: ${formData.phone}`)
 
     } 
+
     const onInputChange = e => {
 
         setFormData({
@@ -26,13 +28,10 @@ export default function SignUp(props) {
         }); 
     };
     
-    
-
-
          return (
             <div className = 'signup'>
                 <Form onSubmit = {onSubmitHandler}>
-                <FormGroup>
+                <FormGroup className = 'set'>
                     <Label for="username">Username {formData.username || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="username"
@@ -41,7 +40,7 @@ export default function SignUp(props) {
                     placeholder="create a username"
                     />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className = 'set'>
                     <Label for="email">Email {formData.email || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="email"
@@ -50,7 +49,7 @@ export default function SignUp(props) {
                     placeholder="add your email"
                     />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className = 'set'>
                     <Label for="password">Password {formData.password || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="password"
@@ -60,7 +59,7 @@ export default function SignUp(props) {
                     />
                 </FormGroup>
                 
-                <FormGroup>
+                <FormGroup className = 'set'>
                     <Label for="phone">Phone Number {formData.phone || ''}</Label>
                     <Input onChange = {onInputChange}
                     type="phone"
@@ -69,11 +68,13 @@ export default function SignUp(props) {
                     placeholder="enter your phone number"
                     />
                 </FormGroup>
+                <div className = "button">
                 <Button>Submit</Button>
+                </div>
                 </Form>
                 <Link >
                 {/* <Link to = '/signin'> */}
-                    SIGN IN
+                    Want to sign in? Click here 
                 </Link>
     </div>
   );
