@@ -72,7 +72,7 @@ export default function SignUp(props) {
                 <Button>Submit</Button>
                 </div>
                 </Form>
-                <Link >
+                <Link to = '/signin' >
                 {/* <Link to = '/signin'> */}
                     Want to sign in? Click here 
                 </Link>

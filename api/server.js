@@ -19,7 +19,7 @@ const sessionConfig = {
     httpOnly: true, //no js code on the client will get access to the cookie
   },
   resave: false, // do you want to recreate sessions when nothing has changed
-  saveUninitialixed: false, //only true once a user ops in, need to dynamically change using env variables
+  saveUninitialized: false, //only true once a user ops in, need to dynamically change using env variables
 }
 
 
