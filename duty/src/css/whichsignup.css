@@ -1,0 +1,81 @@
+.which {
+    height: 50vh;
+    /* padding-bottom: 20rem; */
+    display: flex;
+    flex-direction: column;
+    /* align-content: space-between; */
+    align-items: center;
+}
+
+.eachwhich {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.eachwhich p {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    
+}
+
+@media(min-width: 500px) {
+    
+    .eachwhich {
+    }
+
+    .eachwhich p {
+        font-size: 2.5rem;
+        
+    }
+
+    Button {
+        font-size: 2.5rem;
+    }
+}
+
+@media(min-width: 800px) {
+    .eachwhich p {
+        font-size: 3.5rem;
+        
+    }
+
+}
+
+@media(min-width: 1000px) {
+    .eachwhich p {
+        font-size: 4.3rem;
+        
+    }
+
+    Button {
+        font-size: 3.5rem;
+    }
+
+}
+
+
+
+/* .which {
+    padding-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.eachwhich {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.eachwhich p {
+    font-size: 4rem;
+}
+
+.which-btns {
+    align-content: center;
+} */
