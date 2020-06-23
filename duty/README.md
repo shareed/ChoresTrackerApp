@@ -12,6 +12,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 #DUTY APP - Basic App Set Up
 ###Home - Complete
+    - react router dom `npm i react-router-dom`
 ###Which Sign Up - Complete
 ###Sign Up - Complete
+
+
 ###Sign In - Working
+    - axios `npm i axios`
