@@ -16,19 +16,14 @@ export default function SignUp(props) {
         
         e.preventDefault();
         alert(`sending: UserName: ${formData.username}, Email: ${formData.email}, Password: ${formData.phone}`)
-        // console.log(user.name);
-        // console.log(user.password);
 
     } 
     const onInputChange = e => {
-        //set a new state, an object
+
         setFormData({
             ...formData,
-
-            //used to get the dynamic name property, and the value of that property 
             [e.target.name]: e.target.value,
         }); 
-    //  debugger
     };
     
     

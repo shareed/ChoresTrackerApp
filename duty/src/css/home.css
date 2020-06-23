@@ -38,116 +38,32 @@ Button {
   border-radius: .4rem;
   font-size: 1rem;
   letter-spacing: .2rem;
-  margin: 4rem;
+  margin: 0 4rem 0 4rem;
 } 
-
-
-
 
 
 @media(min-width: 500px) {
-Button {
-  padding: 1rem;
-  font-size: 1.5rem;
-} 
-
-
-
+  Button {
+    padding: 1.2rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media(min-width: 800px) {
-  .btns {
-    margin-bottom: 3rem;
-  }
   Button {
-    padding: 1.5rem;
+    margin-top: 3rem;
+    padding: 1.2rem;
     font-size: 2rem;
-  } 
-  
-  
-  
   }
-  
+}
 
-  /* 
+@media(min-width: 1000px) {
+  .home {
+    font-size: 3.8rem;
+  }
+}
 
-  
-  
-  /* 
-  button {
-    background-color: transparent;
-    outline: none;
-    border: 0;
-    cursor: pointer;
-  }
-  
-  
-  .home .app_info {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-  }
-  
-  .home .app_info p {
-    font-size: 3rem;
-    margin-bottom: 8rem;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .home .app_info .fa {
-    margin-right: 10px;
-  }
-  
-  .home .app_info .top {
-    display: none;
-  }
-  
-  .home .btns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 40px 0 40px;
-    
-  }
-  
-  .home .btns .btn {
-    background-color: #4C4B63;
-    margin-top: 20px;
-    width: 30%;
-    font-size: 3rem;
-  }
-  
-  .signin {
-    margin: 20px auto;
-    width: 80%;
-    background-color: #4C4B63;
-    font-weight: bolder;
-    padding: 20px;
-  }
-  
-  .signin a {
-    color: #8282f0;
-  }
-  
-  .signin p {
-    font-size: .7rem;
-  }
-  
-  .signup {
-    margin: 20px auto;
-    width: 80%;
-    background-color: #4C4B63;
-    font-weight: bolder;
-    padding: 20px;
-  }
-  
-  .signup a {
-    color: #8282f0;
-  }
-  
-  .signup p {
-    font-size: .7rem;
-  } */
+
+
+
   
