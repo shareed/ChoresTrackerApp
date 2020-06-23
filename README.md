@@ -22,3 +22,10 @@ Users
 
 ##Chores FrontEnd
 - To start app `npm start`
+
+####Routing
+- `npm i react-router-dom`
+
+####Buttons
+- `npm install --save bootstrap`
+- `npm install --save reactstrap react react-dom`
